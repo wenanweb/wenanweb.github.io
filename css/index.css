@@ -1,0 +1,74 @@
+body{
+	background: #000;
+	/* background: red; */
+	/* padding-top: 75px; */
+}
+.top-box{
+	margin-top: 2px;
+}
+.top-bg-img{
+	width: 100%;
+}
+.wenan-title-box{
+	color: #E7E7E7;
+	font-size: 24px;
+	font-weight: bolder;
+	padding-left: 23px;
+	margin-top: 5px;
+}
+
+.date-box{
+	color: #696969;
+	font-size: 12px;
+	padding-left: 23px;
+	margin-top: 10px;
+}
+
+
+.wenan-box{
+	margin-top: 22px;
+}
+.wenan-list-li{
+	color: #ECECEC;
+	font-size: 16.2px;
+	margin-bottom: 12px;
+	line-height: 26px;
+	padding-left: 24px;
+	padding-right: 20px;
+	
+}
+
+
+.console{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+	height: 45px;
+	padding: 0px 10px;
+}
+.console-title{
+	float: left;
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+}
+.console-text{
+	float: left;
+	margin-left: 35px;
+	width: 80px;
+	height: 42px;
+	font-size: 28px;
+	text-align: center;
+	border: none;
+	border-bottom: 2px solid #FFF;
+	background: none;
+	color: #fff;
+}
+.console-text-sure{
+	float: right;
+	height: 45px;
+	width: 100px;
+	border-radius: 7px;
+	border: none;
+}

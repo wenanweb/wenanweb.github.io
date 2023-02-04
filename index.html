@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<META HTTP-EQUIV="pragma" CONTENT="no-cache">   
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">   
+		<META HTTP-EQUIV="expires" CONTENT="0">  
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title></title>
+		<link rel="stylesheet" href="css/base.css"/>
+		<link rel="stylesheet" href="css/index.css"/>
+	</head>
+	<script src="js/jquery2.1.4.min.js"></script>
+	<script>
+		$(function(){		
+			$.ajax({
+				url: "json/json.json",//json文件位置，文件名
+				type: "GET",//请求方式为get
+				dataType: "json", //返回数据格式为json
+				success: function(data) {//请求成功完成后要执行的方法 
+				   var wenanListArr = data;
+				   console.log("文案条数："+ wenanListArr.length)
+				    function noRepeat(arr){ //数组去重
+				      var newArr = [...new Set(arr)]; //利用了Set结构不能接收重复数据的特点		
+				      return newArr		
+				    }
+				   
+				    var wenanList = noRepeat(wenanListArr) 
+				    // console.log("去重的文案数组为："+wenanList)
+				   
+				   function wenanAppend(){
+				   	function shuffle(arr){  //数组随机打乱算法
+				   	    var l = arr.length
+				   	    var index, temp
+				   	    while(l>0){
+				   	        index = Math.floor(Math.random()*l)
+				   	        temp = arr[l-1]
+				   	        arr[l-1] = arr[index]
+				   	        arr[index] = temp
+				   	        l--
+				   	    }
+				   	    return arr
+				   	}
+				   	var need_wenanList =  shuffle(wenanList);//数组随机打乱
+				   	console.log("随机打乱文案数组为：" + need_wenanList);//数组随机打乱
+				   	var wenanNumber = null; //文案数量
+				   	var console_text_Number = $(".console-text").val();//获取数字框数字
+				   	wenanNumber = console_text_Number;
+				   	console.log("需要的文案数量为："+wenanNumber);
+				   	
+				   	var wenan = need_wenanList.slice(0,wenanNumber); //最终展示的文案数组最终展示的文案数组最终展示的文案数组最终展示的文案数组
+				   	console.log("最终展示的文案数组为："+wenan);
+				   	for(let i =0;i<wenan.length;i++){
+				   		let html = `<li class="wenan-list-li" contenteditable="true">${i+1}.${wenan[i]}</li>`;
+				   		$(".wenan-list").append(html)
+				   	}
+				   }
+				   wenanAppend()
+				   
+				   $(".console-text-sure").click(function(){
+				   	$(".wenan-list").html("")
+				   	wenanAppend()
+				   })
+				  
+				}
+			})
+															
+			 
+			
+			
+			//月日小时分钟
+			var myDate = new Date();
+			var yue = myDate.getMonth() + 1;
+			var ri = myDate.getDate();
+			var xiaoshi = myDate.getHours()>=10?myDate.getHours():'0'+myDate.getHours();       //获取当前小时数(0-23)
+			var fenzhong = myDate.getMinutes()>=10?myDate.getMinutes():'0'+myDate.getMinutes();     //获取当前分钟数(0-59)
+			$(".yue").text(yue)
+			$(".ri").text(ri)
+			$(".xiaoshi").text(xiaoshi);
+			$(".fenzhong").text(fenzhong);
+			// console.log("日期是:"+yue+"月"+ri+"日"+" "+xiaoshi+":"+fenzhong)	
+		})
+		
+	</script>
+	<body>
+		<div class="top-box">
+			<img class="top-bg-img" src="img/imgtop.jpg"/>
+		</div>
+		<div class="wenan-title-box" contenteditable="true">
+			收藏在备忘录里的小众情绪文案
+		</div>
+		<div class="date-box">
+			<span class="yue">2</span>月<span class="ri">2</span>日 <span class="xiaoshi">12</span>:<span class="fenzhong">53</span>
+		</div>
+		<div class="wenan-box">
+		    <ul class="wenan-list">
+				<!-- <li class="wenan-list-li" contenteditable="true">1.翻篇吧 还是没缘</li>		 -->
+			</ul>
+		</div>
+	    <div class="console">
+	    	 <div class="console-title">设置文案条数:</div>
+	    	 <input class="console-text" type="number" value="12" />
+	    	 <button class="console-text-sure">确定</button>
+	    </div>
+	</body>
+</html>

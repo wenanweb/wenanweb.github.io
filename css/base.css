@@ -1,0 +1,9 @@
+*{ 
+	margin: 0;
+	padding: 0;
+}
+div,ul,li,img{
+	overflow: hidden;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; font-family: "Microsoft YaHei"; }
+img { border: none }
