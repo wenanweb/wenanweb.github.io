@@ -41,7 +41,6 @@ body{
 
 .console{
 	margin-top: 20px;
-	margin-bottom: 20px;
 	text-align: center;
 	height: 45px;
 	padding: 0px 10px;
@@ -55,7 +54,7 @@ body{
 }
 .console-text{
 	float: left;
-	margin-left: 35px;
+	margin-left: 25px;
 	width: 80px;
 	height: 42px;
 	font-size: 28px;
@@ -71,4 +70,39 @@ body{
 	width: 100px;
 	border-radius: 7px;
 	border: none;
+}
+.wenan-title{
+	width: 100%;
+	height: 30px;
+}
+
+.title-box-margin{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.title-box{
+	text-align: center;
+	height: 45px;
+	padding: 0px 10px;
+	display: flex;
+}
+.title-tips{
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+
+}
+.mySelect{
+	float: left;
+	height: 45px;
+	font-size: 14px;
+	color: #000;
+	flex: 1;
+	margin-left: 25px;
+	border-radius:7px;
+	
+	cursor:pointer;
+	
+	outline:none;
 }

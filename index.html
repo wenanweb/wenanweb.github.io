@@ -79,6 +79,46 @@
 			$(".xiaoshi").text(xiaoshi);
 			$(".fenzhong").text(fenzhong);
 			// console.log("日期是:"+yue+"月"+ri+"日"+" "+xiaoshi+":"+fenzhong)	
+			
+			
+			//改变顶部标题
+		    var topTitleArr = [
+				'收藏在备忘录里的小众情绪文案',
+				'直接封神的高级小众情绪文案',
+				'近期一眼封神的小众情绪文案',
+				'备忘录里的高级无风格emo文案',
+				'备忘录里的高级简短emo文案',
+				'评论区杀疯了的小众情绪文案'
+			];
+			
+			function shuffle(arr){  //数组随机打乱算法
+			    var l = arr.length
+			    var index, temp
+			    while(l>0){
+			        index = Math.floor(Math.random()*l)
+			        temp = arr[l-1]
+			        arr[l-1] = arr[index]
+			        arr[index] = temp
+			        l--
+			    }
+			    return arr
+			}
+			var shuffleTopTitleArr =  shuffle(topTitleArr);//顶部标题数组随机打乱
+			
+			for(let i =0;i<shuffleTopTitleArr.length;i++){
+				let html = `<option>${shuffleTopTitleArr[i]}</option>`
+				$(".mySelect").append(html)
+			}
+			
+			function  change_title(){
+				var top_title_text = $('.mySelect').val();; //顶部的标题变量
+				$(".wenan-title-box").text(top_title_text);
+			}
+			change_title();
+			
+			$(".mySelect").change(function(){
+				change_title()
+			})
 		})
 		
 	</script>
@@ -87,7 +127,7 @@
 			<img class="top-bg-img" src="img/imgtop.jpg"/>
 		</div>
 		<div class="wenan-title-box" contenteditable="true">
-			收藏在备忘录里的小众情绪文案
+			
 		</div>
 		<div class="date-box">
 			<span class="yue">2</span>月<span class="ri">2</span>日 <span class="xiaoshi">12</span>:<span class="fenzhong">53</span>
@@ -102,5 +142,19 @@
 	    	 <input class="console-text" type="number" value="12" />
 	    	 <button class="console-text-sure">确定</button>
 	    </div>
+		
+		<div class="title-box-margin">
+			<div class="title-box">
+				<div class="title-tips">设置文案标题:</div>
+				<select class="mySelect">
+					<!-- <option>收藏在备忘录里的小众情绪文案</option>
+					<option>直接封神的高级小众情绪文案</option>
+					<option>近期一眼封神的小众情绪文案</option>
+					<option>备忘录里的高级无风格emo文案</option>
+					<option>备忘录里的高级简短emo文案</option>
+					<option>评论区杀疯了的小众情绪文案</option> -->
+				</select>
+			</div>
+		</div>
 	</body>
 </html>
