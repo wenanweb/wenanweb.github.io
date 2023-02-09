@@ -43,6 +43,7 @@
 				   	}
 				   	var need_wenanList =  shuffle(wenanList);//数组随机打乱
 				   	console.log("随机打乱文案数组为：" + need_wenanList);//数组随机打乱
+					$(".wenan_num").text(need_wenanList.length)
 				   	var wenanNumber = null; //文案数量
 				   	var console_text_Number = $(".console-text").val();//获取数字框数字
 				   	wenanNumber = console_text_Number;
@@ -156,6 +157,11 @@
 					<option>评论区杀疯了的小众情绪文案</option> -->
 				</select>
 			</div>
+		</div>
+		
+		<div class="wenannumber-box">
+			<div class="title-tips">文案总条数为:</div>
+			<div class="wenannumber"><span class="wenan_num"></span> 条</div>
 		</div>
 	</body>
 </html>

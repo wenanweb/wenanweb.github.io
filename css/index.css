@@ -106,3 +106,20 @@ body{
 	
 	outline:none;
 }
+.wenannumber-box{
+	height: 45px;
+	padding: 0px 10px;
+	display: flex;
+	
+}
+.wenannumber{
+	height: 45px;
+	line-height: 45px;
+	font-size: 18px;
+	color: #fff;
+	margin-left: 25px;
+	color: red;
+}
+.wenan_num{
+	
+}
